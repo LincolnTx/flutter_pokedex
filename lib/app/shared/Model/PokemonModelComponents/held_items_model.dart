@@ -1,4 +1,4 @@
-import 'package:pokedex/app/shared/Model/PokemonModelsComponents/version_details_model.dart';
+import 'package:pokedex/app/shared/Model/PokemonModelComponents/version_details_model.dart';
 
 import '../pokemon_model.dart';
 import 'ability_model.dart';

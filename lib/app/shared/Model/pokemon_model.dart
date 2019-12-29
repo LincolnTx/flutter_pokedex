@@ -1,12 +1,12 @@
-import 'PokemonModelsComponents/abilities_model.dart';
-import 'PokemonModelsComponents/ability_model.dart';
-import 'PokemonModelsComponents/forms_model.dart';
-import 'PokemonModelsComponents/games_indices_model.dart';
-import 'PokemonModelsComponents/held_items_model.dart';
-import 'PokemonModelsComponents/moves_model.dart';
-import 'PokemonModelsComponents/sprites_model.dart';
-import 'PokemonModelsComponents/stats_model.dart';
-import 'PokemonModelsComponents/types_model.dart';
+import 'PokemonModelComponents/abilities_model.dart';
+import 'PokemonModelComponents/ability_model.dart';
+import 'PokemonModelComponents/forms_model.dart';
+import 'PokemonModelComponents/games_indices_model.dart';
+import 'PokemonModelComponents/held_items_model.dart';
+import 'PokemonModelComponents/moves_model.dart';
+import 'PokemonModelComponents/sprites_model.dart';
+import 'PokemonModelComponents/stats_model.dart';
+import 'PokemonModelComponents/types_model.dart';
 
 class pokemon_model {
   List<Abilities> abilities;
