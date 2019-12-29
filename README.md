@@ -1,6 +1,6 @@
 # Pokedex Flutter
 
-A Flutter project for learning about bloc pattern.
+A Flutter project for learning about bloc pattern, using the mobx implementation.
 This project in only for study porpuse, all the content here does not belong to me, all the credit goes to Nintendo Co. Ltd. 
 All the backend resource i use to get information to fill this applications belongs to [PokeApi](pokeapi.co)
 
