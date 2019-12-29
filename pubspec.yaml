@@ -27,6 +27,8 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+  assets: 
+    - lib/app/shared/assets/images/
 
 scripts:
   build: flutter pub run build_runner build

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
-  const HomePage({Key key, this.title = "Home"}) : super(key: key);
+  const HomePage({Key key, this.title = "Pokedex"}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -15,8 +15,12 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-        children: <Widget>[],
+      body: Container(
+       decoration: BoxDecoration(
+         image: DecorationImage(image: AssetImage("lib/app/shared/assets/images/pattern.png"),
+         fit: BoxFit.cover)
+       ),
+        child: Row(children: <Widget>[],),
       ),
     );
   }
