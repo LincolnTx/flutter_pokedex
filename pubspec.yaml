@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter_mobx: ^0.3.3+1
   mobx: ^0.3.9+1
-  dio: ^3.0.8
+  dio: ^2.1.13
   rxdart: ^0.22.6
   bloc_pattern: ^2.5.1
   flutter:
