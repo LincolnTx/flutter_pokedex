@@ -8,7 +8,7 @@ import 'PokemonModelComponents/sprites_model.dart';
 import 'PokemonModelComponents/stats_model.dart';
 import 'PokemonModelComponents/types_model.dart';
 
-class pokemon_model {
+class PokemonModel {
   List<Abilities> abilities;
   int baseExperience;
   List<Forms> forms;
@@ -27,7 +27,7 @@ class pokemon_model {
   List<Types> types;
   int weight;
 
-  pokemon_model(
+  PokemonModel(
       {this.abilities,
       this.baseExperience,
       this.forms,
@@ -46,7 +46,7 @@ class pokemon_model {
       this.types,
       this.weight});
 
-  pokemon_model.fromJson(Map<String, dynamic> json) {
+  PokemonModel.fromJson(Map<String, dynamic> json) {
     if (json['abilities'] != null) {
       abilities = new List<Abilities>();
       json['abilities'].forEach((v) {

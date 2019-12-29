@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:pokedex/app/components/pokemon_card.dart';
+import 'package:pokedex/app/shared/Model/pokemon_model.dart';
 class HomePage extends StatefulWidget {
   final String title;
   const HomePage({Key key, this.title = "Pokedex"}) : super(key: key);
@@ -9,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  PokemonModel pokemonModel = new PokemonModel();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,9 @@ class _HomePageState extends State<HomePage> {
          image: DecorationImage(image: AssetImage("lib/app/shared/assets/images/pattern.png"),
          fit: BoxFit.cover)
        ),
-        child: Row(children: <Widget>[],),
+        child: Row(children: <Widget>[
+          PokemonCard(pokemon: pokemonModel,)
+        ],),
       ),
     );
   }
