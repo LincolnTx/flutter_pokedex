@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/app/components/pokemon_card.dart';
+import 'package:pokedex/app/modules/home/home_controller.dart';
+import 'package:pokedex/app/modules/home/home_module.dart';
 import 'package:pokedex/app/shared/Model/pokemon_model.dart';
 class HomePage extends StatefulWidget {
   final String title;
@@ -11,20 +13,23 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   PokemonModel pokemonModel = new PokemonModel();
+  HomeController homeController = HomeModule.to.getBloc<HomeController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(
+      body: SingleChildScrollView( 
+      child: Container(
        decoration: BoxDecoration(
          image: DecorationImage(image: AssetImage("lib/app/shared/assets/images/pattern.png"),
          fit: BoxFit.cover)
        ),
-        child: Row(children: <Widget>[
-          PokemonCard(pokemon: pokemonModel,)
+        child: Column(children: <Widget>[
+          PokemonCard(pokemon: homeController.pokemonList.length >0 ? homeController.pokemonList[0]: pokemonModel,)
         ],),
+      ),
       ),
     );
   }

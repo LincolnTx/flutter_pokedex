@@ -1,24 +1,28 @@
 import 'package:dio/dio.dart';
+import 'package:pokedex/app/app_module.dart';
+import 'package:pokedex/app/shared/Model/custom_dio/custom_dio.dart';
 
 class CustomInterceptors extends InterceptorsWrapper {
+  final CustomDio dio = AppModule.to.getDependency<CustomDio>();
+  
   @override
-  onRequest(RequestOptions options){
+  Future onRequest(RequestOptions options){
     print("REQUEST[${options.method}] => PATH: ${options.path}");
-    return options;
+    return dio.dioClient.resolve(options);
   }
 
   @override
-  onResponse(Response response) {
+  Future onResponse(Response response) {
     print("Response[${response.statusCode}] => PATH: ${response.request.path}");
-    return response;
+    return dio.dioClient.resolve(response);
   }
 
   @override
-  onError(DioError e ) {
+  Future onError(DioError e ) {
     print("Error[${e.response.statusCode}] => PATH: ${e.response.request.path}");
     if (e.response.statusCode == 404)
-      return DioError(message: "Bad resquest");
+      return dio.dioClient.resolve(DioError( error: "Bad resquest"));
     
-    return e;
+    return dio.dioClient.resolve(e);
   }
 }

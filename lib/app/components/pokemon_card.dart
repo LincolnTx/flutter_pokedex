@@ -20,8 +20,12 @@ class _PokemonCardState extends State<PokemonCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(myPokemon.name),
+    return Center(
+     child: Column(
+       children: <Widget>[
+        Text(myPokemon.name),
+      ],
+     ),
     );
   }
 }
