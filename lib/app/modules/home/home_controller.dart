@@ -41,7 +41,7 @@ abstract class _HomeBase with Store {
       auxPokemon.pokemonIndex = pokemonService.getPokemonIndex(pokemon);
       auxPokemon.imageUrl = pokemonService.addImageOnPokemon(auxPokemon.pokemonIndex);
       auxPokemon.imageLoading = true;
-      auxPokemon.name = pokemon.name;
+      auxPokemon.name = pokemonService.formatPokemonName(pokemon.name);
       pokemonsInfoList.add(auxPokemon);
     });
   }

@@ -10,4 +10,7 @@ class PokemonService {
   String getPokemonIndex(PokeApiResponse pokemon) {
     return pokemon.url.split("/")[pokemon.url.split("/").length - 2];
   }
+  String formatPokemonName(String name) {
+    return name.toLowerCase().replaceFirst(name[0], name[0].toUpperCase());
+  }
 }
