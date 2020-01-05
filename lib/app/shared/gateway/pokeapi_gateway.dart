@@ -26,7 +26,7 @@ class PokeapiGateway extends Disposable {
 
   }
 
-  Future<PokemonModel> getFullPokemonInfo(int pokemonId) {
+  Future<PokemonCardModel> getFullPokemonInfo(int pokemonId) {
     
   }
 }

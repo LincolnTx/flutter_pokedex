@@ -23,7 +23,7 @@ abstract class _HomeBase with Store {
   }
 
   @observable
-  ObservableList<PokemonModel> pokemonsInfoList = ObservableList<PokemonModel>();
+  ObservableList<PokemonCardModel> pokemonsInfoList = ObservableList<PokemonCardModel>();
 
   @action
   getNew() {
@@ -37,7 +37,7 @@ abstract class _HomeBase with Store {
 
     List<PokeApiResponse>  receivedPokemons = await pokeapiGateway.getAllPokemonsRef();
     receivedPokemons.forEach((pokemon) {
-      PokemonModel auxPokemon = new PokemonModel();
+      PokemonCardModel auxPokemon = new PokemonCardModel();
       auxPokemon.pokemonIndex = pokemonService.getPokemonIndex(pokemon);
       auxPokemon.imageUrl = pokemonService.addImageOnPokemon(auxPokemon.pokemonIndex);
       auxPokemon.imageLoading = true;

@@ -1,13 +1,13 @@
-class PokemonModel {
+class PokemonCardModel {
   String name;
   String imageUrl;
   String pokemonIndex;
   bool imageLoading;
 
-  PokemonModel(
+  PokemonCardModel(
       {this.name, this.imageUrl, this.pokemonIndex, this.imageLoading});
 
-  PokemonModel.fromJson(Map<String, dynamic> json) {
+  PokemonCardModel.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     imageUrl = json['imageUrl'];
     pokemonIndex = json['pokemonIndex'];

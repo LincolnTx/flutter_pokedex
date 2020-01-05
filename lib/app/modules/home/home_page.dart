@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  PokemonModel pokemonModel = new PokemonModel();
+  PokemonCardModel pokemonModel = new PokemonCardModel();
   HomeController homeController = HomeModule.to.getBloc<HomeController>();
   @override
   Widget build(BuildContext context) {

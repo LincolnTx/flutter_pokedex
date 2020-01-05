@@ -12,14 +12,14 @@ mixin _$HomeController on _HomeBase, Store {
   final _$pokemonsInfoListAtom = Atom(name: '_HomeBase.pokemonsInfoList');
 
   @override
-  ObservableList<PokemonModel> get pokemonsInfoList {
+  ObservableList<PokemonCardModel> get pokemonsInfoList {
     _$pokemonsInfoListAtom.context.enforceReadPolicy(_$pokemonsInfoListAtom);
     _$pokemonsInfoListAtom.reportObserved();
     return super.pokemonsInfoList;
   }
 
   @override
-  set pokemonsInfoList(ObservableList<PokemonModel> value) {
+  set pokemonsInfoList(ObservableList<PokemonCardModel> value) {
     _$pokemonsInfoListAtom.context.conditionallyRunInAction(() {
       super.pokemonsInfoList = value;
       _$pokemonsInfoListAtom.reportChanged();
