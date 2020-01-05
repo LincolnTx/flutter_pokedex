@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:pokedex/app/components/pokemon_card.dart';
 import 'package:pokedex/app/modules/home/home_controller.dart';
 import 'package:pokedex/app/modules/home/home_module.dart';
@@ -24,11 +25,12 @@ class _HomePageState extends State<HomePage> {
       child: Container(
        decoration: BoxDecoration(
          image: DecorationImage(image: AssetImage("lib/app/shared/assets/images/pattern.png"),
-         fit: BoxFit.cover)
+         fit: BoxFit.cover
+         ),
        ),
-        child: Column(children: <Widget>[
-          PokemonCard(pokemon: homeController.pokemonList.length >0 ? homeController.pokemonList[0]: pokemonModel,)
-        ],),
+        child: Observer(builder: (BuildContext context) {
+          return homeController.pokemonsInfoList.length > 0 ?  PokemonCard(pokemon: homeController.pokemonsInfoList[0]) : new Container(width: 0, height: 0,);
+        },)
       ),
       ),
     );

@@ -9,21 +9,21 @@ part of 'home_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$HomeController on _HomeBase, Store {
-  final _$pokemonListAtom = Atom(name: '_HomeBase.pokemonList');
+  final _$pokemonsInfoListAtom = Atom(name: '_HomeBase.pokemonsInfoList');
 
   @override
-  ObservableList<PokemonModel> get pokemonList {
-    _$pokemonListAtom.context.enforceReadPolicy(_$pokemonListAtom);
-    _$pokemonListAtom.reportObserved();
-    return super.pokemonList;
+  ObservableList<PokemonModel> get pokemonsInfoList {
+    _$pokemonsInfoListAtom.context.enforceReadPolicy(_$pokemonsInfoListAtom);
+    _$pokemonsInfoListAtom.reportObserved();
+    return super.pokemonsInfoList;
   }
 
   @override
-  set pokemonList(ObservableList<PokemonModel> value) {
-    _$pokemonListAtom.context.conditionallyRunInAction(() {
-      super.pokemonList = value;
-      _$pokemonListAtom.reportChanged();
-    }, _$pokemonListAtom, name: '${_$pokemonListAtom.name}_set');
+  set pokemonsInfoList(ObservableList<PokemonModel> value) {
+    _$pokemonsInfoListAtom.context.conditionallyRunInAction(() {
+      super.pokemonsInfoList = value;
+      _$pokemonsInfoListAtom.reportChanged();
+    }, _$pokemonsInfoListAtom, name: '${_$pokemonsInfoListAtom.name}_set');
   }
 
   final _$_HomeBaseActionController = ActionController(name: '_HomeBase');

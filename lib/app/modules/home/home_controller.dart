@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:mobx/mobx.dart';
+import 'package:pokedex/app/shared/Model/PokemonModelComponents/pokeapi_response.dart';
 import 'package:pokedex/app/shared/Model/pokemon_model.dart';
 import 'package:pokedex/app/shared/gateway/pokeapi_gateway.dart';
+import 'package:pokedex/app/shared/services/pokemon_service.dart';
 
 part 'home_controller.g.dart';
 
@@ -9,22 +11,38 @@ class HomeController = _HomeBase with _$HomeController;
 
 abstract class _HomeBase with Store {
   final PokeapiGateway pokeapiGateway;
+  final PokemonService pokemonService;
 
-  _HomeBase(this.pokeapiGateway) {
-    _init();
+  _HomeBase(
+    this.pokeapiGateway,
+    this.pokemonService
+  ) {
+    autorun((_) {
+      _init();
+    });
   }
 
   @observable
-  ObservableList<PokemonModel> pokemonList = ObservableList<PokemonModel>();
+  ObservableList<PokemonModel> pokemonsInfoList = ObservableList<PokemonModel>();
 
   @action
   getNew() {
     //do something
   }
 
-  _init() async {
-    final  receivedPokemons = await pokeapiGateway.getAllPokemons();  
-    pokemonList.addAll(receivedPokemons);
+  fillPokemonList(List<PokeApiResponse> receivedPokemons) async {
+    
   }
+  _init() async {
 
+    List<PokeApiResponse>  receivedPokemons = await pokeapiGateway.getAllPokemonsRef();
+    receivedPokemons.forEach((pokemon) {
+      PokemonModel auxPokemon = new PokemonModel();
+      auxPokemon.pokemonIndex = pokemonService.getPokemonIndex(pokemon);
+      auxPokemon.imageUrl = pokemonService.addImageOnPokemon(auxPokemon.pokemonIndex);
+      auxPokemon.imageLoading = true;
+      auxPokemon.name = pokemon.name;
+      pokemonsInfoList.add(auxPokemon);
+    });
+  }
 }
