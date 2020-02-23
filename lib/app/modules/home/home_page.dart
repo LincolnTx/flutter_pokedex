@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mobx/mobx.dart';
 import 'package:pokedex/app/components/pokemon_card.dart';
 import 'package:pokedex/app/modules/home/home_controller.dart';
 import 'package:pokedex/app/modules/home/home_module.dart';
