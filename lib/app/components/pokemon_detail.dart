@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class PokemonDetail extends StatefulWidget {
   @override
@@ -13,8 +14,31 @@ class _PokemonDetailState extends State<PokemonDetail> {
         title: Text("Pokemon Details"),
       ),
       body: Center(
-        child: Text("This is the pokemon detail page"),
-      ),
+        child:       
+          Container(
+            width: 450,
+            height: 500,
+            child: Card(
+              elevation: 5,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular((6))
+              ),
+              // in this card must be multiple informations about the pokemon
+              // but for now i just wanna try to make some progress bar  for the stats
+              child: Center(
+                child: new LinearPercentIndicator(
+                  width: 400,
+                  lineHeight: 14.0,
+                  percent: 0.5,
+                  backgroundColor: Colors.grey,
+                  progressColor: Colors.blueAccent,
+                  center: Text("50"),
+                ),
+              ),
+            )
+          ),
+      ) 
+
     );
   }
 }
