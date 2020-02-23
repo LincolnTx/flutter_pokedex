@@ -8,6 +8,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  percent_indicator: "^2.1.1"
   flutter_mobx: ^0.3.3+1
   mobx: ^0.3.9+1
   dio: ^3.0.0
