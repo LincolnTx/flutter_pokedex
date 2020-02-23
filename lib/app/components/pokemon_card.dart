@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/app/components/poekon_detail.dart';
+import 'package:pokedex/app/components/pokemon_detail.dart';
 import 'package:pokedex/app/shared/Model/pokemon_model.dart';
 
 class PokemonCard extends StatefulWidget {
