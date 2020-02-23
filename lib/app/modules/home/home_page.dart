@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body:  Container(
         padding: EdgeInsets.only(bottom: 10),
-       decoration: BoxDecoration(
+        decoration: BoxDecoration(
          image: DecorationImage(image: AssetImage("lib/app/shared/assets/images/pattern.png"),
          fit: BoxFit.cover
          ),
