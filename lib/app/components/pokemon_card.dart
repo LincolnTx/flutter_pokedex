@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/app/components/poekon_detail.dart';
 import 'package:pokedex/app/shared/Model/pokemon_model.dart';
 
 class PokemonCard extends StatefulWidget {
@@ -26,7 +27,10 @@ class _PokemonCardState extends State<PokemonCard> {
        children: <Widget>[
           InkWell(
             onTap: () {
-             print ('botao pressionado');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PokemonDetail())
+              );
            },
             child: Wrap(
               children: <Widget>[
