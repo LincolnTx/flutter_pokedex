@@ -1,14 +1,14 @@
-import 'ability_model.dart';
+import 'type_model.dart';
 
 class Types {
   int slot;
-  Ability type;
+  Type type;
 
   Types({this.slot, this.type});
 
   Types.fromJson(Map<String, dynamic> json) {
     slot = json['slot'];
-    type = json['type'] != null ? new Ability.fromJson(json['type']) : null;
+    type = json['type'] != null ? new Type.fromJson(json['type']) : null;
   }
 
   Map<String, dynamic> toJson() {
