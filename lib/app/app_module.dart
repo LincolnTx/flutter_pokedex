@@ -1,3 +1,4 @@
+import 'package:pokedex/app/modules/pokemon_detail/pokemon_detail_controller.dart';
 import 'package:pokedex/app/shared/Model/custom_dio/custom_dio.dart';
 import 'package:pokedex/app/app_controller.dart';
 import 'package:bloc_pattern/bloc_pattern.dart';
@@ -8,6 +9,7 @@ import 'package:dio/dio.dart';
 class AppModule extends ModuleWidget {
   @override
   List<Bloc> get blocs => [
+        Bloc((i) => PokemonDetailController()),
         Bloc((i) => AppController()),
       ];
 
