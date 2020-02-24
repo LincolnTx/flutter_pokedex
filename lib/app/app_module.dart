@@ -1,3 +1,4 @@
+import 'package:pokedex/app/modules/home/home_module.dart';
 import 'package:pokedex/app/modules/pokemon_detail/pokemon_detail_controller.dart';
 import 'package:pokedex/app/shared/Model/custom_dio/custom_dio.dart';
 import 'package:pokedex/app/app_controller.dart';
@@ -6,10 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:pokedex/app/app_widget.dart';
 import 'package:dio/dio.dart';
 
+import 'shared/gateway/pokeapi_gateway.dart';
+
 class AppModule extends ModuleWidget {
   @override
   List<Bloc> get blocs => [
-        Bloc((i) => PokemonDetailController()),
+        Bloc((i) => PokemonDetailController(HomeModule.to.getDependency<PokeapiGateway>())),
         Bloc((i) => AppController()),
       ];
 

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:pokedex/app/app_module.dart';
+import 'package:pokedex/app/modules/pokemon_detail/pokemon_detail_controller.dart';
 
 class PokemonDetail extends StatefulWidget {
   @override
@@ -7,6 +9,7 @@ class PokemonDetail extends StatefulWidget {
 }
 
 class _PokemonDetailState extends State<PokemonDetail> {
+  PokemonDetailController pokemonDetailController = AppModule.to.getBloc<PokemonDetailController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
