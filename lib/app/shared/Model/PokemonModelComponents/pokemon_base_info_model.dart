@@ -10,9 +10,9 @@ class PokemonBaseInfo {
   int pokemonIndex;
   Types types;
   Stats stats;
-  Double height;
-  Double weight;
-  Abilities abilities;
+  int height;
+  int weight;
+  List<Abilities> abilities;
 
 
   PokemonBaseInfo({ this.name, this.pokemonIndex, this.types, this.stats, 
@@ -25,7 +25,7 @@ class PokemonBaseInfo {
     stats = json['stats'];
     height = json['height'];
     weight = json['weight'];
-    abilities = json['abilities'];
+    abilities = json['abilities'].cast<Abilities>();
   }
 
   Map<String, dynamic> toJson() {
