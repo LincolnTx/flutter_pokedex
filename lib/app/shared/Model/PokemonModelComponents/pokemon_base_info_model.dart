@@ -1,18 +1,12 @@
-import 'dart:ffi';
-
-import 'package:pokedex/app/shared/Model/PokemonModelComponents/abilities_model.dart';
-import 'package:pokedex/app/shared/Model/PokemonModelComponents/stats_model.dart';
-import 'package:pokedex/app/shared/Model/PokemonModelComponents/types_model.dart';
-
 class PokemonBaseInfo {
     // this model is only a mock
   String name;
   int pokemonIndex;
-  Types types;
-  Stats stats;
+  List<dynamic> types;
+  List <dynamic> stats;
   int height;
   int weight;
-  List<Abilities> abilities;
+  List<dynamic> abilities;
 
 
   PokemonBaseInfo({ this.name, this.pokemonIndex, this.types, this.stats, 
@@ -21,11 +15,11 @@ class PokemonBaseInfo {
   PokemonBaseInfo.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     pokemonIndex = json['pokemonIndex'];
-    types = json['types'];
-    stats = json['stats'];
+    types = json['types'].cast<dynamic>();
+    stats = json['stats'].cast<dynamic>();
     height = json['height'];
     weight = json['weight'];
-    abilities = json['abilities'].cast<Abilities>();
+    abilities = json['abilities'].cast<dynamic>();
   }
 
   Map<String, dynamic> toJson() {
