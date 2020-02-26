@@ -26,15 +26,22 @@ class PokeapiGateway extends Disposable {
 
   }
 
-  Future<PokemonBaseInfo> getPokemonBasicInformation(int pokemonId) async  {
+  Future<PokemonBaseInfo> getPokemonBasicInformation(String pokemonId) async  {
     try {
       var response = await _dio.dioClient.get("/$pokemonId");
-      var pokemonInfo = response.data;
-      PokemonBaseInfo pokemonConverter = new PokemonBaseInfo ();
+      var pokemonInfo = response.data;     
+      PokemonBaseInfo pokemonConverted = new PokemonBaseInfo ();
 
-     pokemonConverter.height = pokemonInfo['height'];
-      print(pokemonConverter.height);
-      
+      pokemonConverted.name = pokemonInfo['name'];
+      pokemonConverted.pokemonIndex = int.parse(pokemonId);
+      pokemonConverted.types = pokemonInfo['types'];
+      pokemonConverted.stats = pokemonInfo['stats'];
+      pokemonConverted.height = pokemonInfo['height'];
+      pokemonConverted.weight = pokemonInfo['weight'];
+      pokemonConverted.abilities = pokemonInfo['abilities'];
+
+      return pokemonConverted;
+
     } on DioError catch(error) {
       print(error.message);
     }
