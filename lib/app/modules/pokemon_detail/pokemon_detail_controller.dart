@@ -1,4 +1,5 @@
 import 'package:mobx/mobx.dart';
+import 'package:pokedex/app/components/pokemon_detail.dart';
 import 'package:pokedex/app/shared/Model/PokemonModelComponents/pokemon_base_info_model.dart';
 import 'package:pokedex/app/shared/gateway/pokeapi_gateway.dart';
 
@@ -17,7 +18,7 @@ abstract class _PokemonDetailBase with Store {
   }
 
   _init() async {
-    PokemonBaseInfo pokemonBaseInfo = await pokeapiGateway.getPokemonBasicInformation((1));
-    print('Informção recebida $pokemonBaseInfo');
+    PokemonBaseInfo pokemonBaseInfo = await pokeapiGateway.getPokemonBasicInformation(("1"));
+    print('Informção recebida ${pokemonBaseInfo.pokemonIndex}');
   }
 }

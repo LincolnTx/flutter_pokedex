@@ -29,7 +29,7 @@ class _PokemonCardState extends State<PokemonCard> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => PokemonDetail())
+                MaterialPageRoute(builder: (context) => PokemonDetail(pokemonId: myPokemon.pokemonIndex))
               );
            },
             child: Wrap(

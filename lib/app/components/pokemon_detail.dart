@@ -4,6 +4,10 @@ import 'package:pokedex/app/app_module.dart';
 import 'package:pokedex/app/modules/pokemon_detail/pokemon_detail_controller.dart';
 
 class PokemonDetail extends StatefulWidget {
+  final String pokemonId;
+  
+  const PokemonDetail({Key key, @required this.pokemonId}) : super(key: key);
+
   @override
   _PokemonDetailState createState() => _PokemonDetailState();
 }
